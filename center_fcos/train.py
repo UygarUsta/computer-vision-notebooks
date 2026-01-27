@@ -652,7 +652,7 @@ class DenseCenterNetLoss(nn.Module):
         else:
             loss_ltrb = torch.tensor(0.0).to(Config.DEVICE)
 
-        total_loss = loss_hm + 1.0 * loss_reg + 1.0 * loss_ltrb
+        total_loss = loss_hm + 1.0 * loss_reg + 5.0 * loss_ltrb
         return total_loss, loss_hm, loss_ltrb, loss_reg
     
 # =============================================================================
